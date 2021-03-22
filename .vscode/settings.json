@@ -1,0 +1,13 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+    "blade.format.enable": true,
+    "files.associations": {
+        "*.php": "php"
+    },
+    "html.format.contentUnformatted": "",
+    "html.format.extraLiners": ""
+}
