@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="{{asset ('admin/assets2/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 @endsection
 
-@section('title', 'All Posts')
+@section('title', 'All Postss')
 @section('pagehead', 'All Posts')
 
 @section('maincontent')
