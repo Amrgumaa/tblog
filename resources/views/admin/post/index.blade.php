@@ -3,20 +3,23 @@
 
 <!-- DataTables -->
 <link rel="stylesheet" href="{{asset ('admin/assets2/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
-<link rel="stylesheet" href="{{asset ('admin/assets2/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+<link rel="stylesheet"
+    href="{{asset ('admin/assets2/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
 <link rel="stylesheet" href="{{asset ('admin/assets2/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 @endsection
 
 @section('title', 'All Posts')
 @section('pagehead', 'All Posts')
 
-@section('maincontent')
 
-<div class="d-flex justify-content-center">
+@section('maincontent') 
+
+<div class="d-flex justi fy-content-center">
     <div class="col-md-10">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title"> <a href="{{route('post.create')}}"> <button type="button" class="btn btn-info">Create new</button></a> </h3>
+                <h3 class="card-title"> <a href="{{route('post.create')}}"> <button type="button"
+                            class="btn btn-info">Create new</button></a> </h3>
             </div>
             <div class="card-body">
                 <table class="table table-hover" id="example1" style="font-size: 14px;">
@@ -25,7 +28,9 @@
                         <tr>
                             <th width="10px">
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input custom-control-input-danger custom-control-input-outline" type="checkbox" id="selectall">
+                                    <input
+                                        class="custom-control-input custom-control-input-danger custom-control-input-outline"
+                                        type="checkbox" id="selectall">
                                     <label for="selectall" class="custom-control-label"></label>
                                 </div>
                             </th>
@@ -46,14 +51,17 @@
                         <tr>
                             <td>
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input custom-control-input-danger custom-control-input-outline" type="checkbox" id="{{ $post->id}}">
+                                    <input
+                                        class="custom-control-input custom-control-input-danger custom-control-input-outline"
+                                        type="checkbox" id="{{ $post->id}}">
                                     <label for="{{ $post->id}}" class="custom-control-label"></label>
                                 </div>
                             </td>
                             <td> <a href="">{{ $post->id }}</a></td>
                             <td>
                                 <div style=" max-width: 60px; max-height:50px;overflow:hidden ">
-                                    <img src="@if($post->image)  {{ $post->image }} @else {{asset('storage/posts/'.$post->id.'/'.$post->image)}} @endif" class=" img-fluid" alt="{{$post->image}}">
+                                    <img src="@if($post->image)  {{ $post->image }} @else {{asset('storage/posts/'.$post->id.'/'.$post->image)}} @endif"
+                                        class=" img-fluid" alt="{{$post->image}}">
                                 </div>
                             </td>
                             <td>{{ $post->title }}</td>
@@ -74,13 +82,16 @@
                             <td>{{ $post->created_at }}</td>
                             <td>
                                 <div class="btn-group btn-group-toggle">
-                                    <a class="btn btn-success btn-xs mr-1" href="{{route('post.show',$post->id) }}"> <i class="fas fa-eye "> </i></a>
-                                    <a class="btn btn-info btn-xs mr-1" href="{{route('post.edit',$post->id) }}"> <i class="fas fa-edit "> </i></a>
+                                    <a class="btn btn-success btn-xs mr-1" href="{{route('post.show',$post->id) }}"> <i
+                                            class="fas fa-eye "> </i></a>
+                                    <a class="btn btn-info btn-xs mr-1" href="{{route('post.edit',$post->id) }}"> <i
+                                            class="fas fa-edit "> </i></a>
                                     <form action="{{ route('post.destroy',$post->id) }}" method="POST" class="mr-1">
 
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn-danger btn-xs"><i class="fas fa-trash"></i></button>
+                                        <button type="submit" class="btn-danger btn-xs"><i
+                                                class="fas fa-trash"></i></button>
                                     </form>
                                 </div>
                             </td>
@@ -119,15 +130,15 @@
 <script src="{{asset ('admin/assets2/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
 
 <script>
-    $(function() {
-        $("#example1").DataTable({
-            "responsive": true,
-            "lengthChange": false,
-            "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+$(function() {
+    $("#example1").DataTable({
+        "responsive": true,
+        "lengthChange": false,
+        "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
-    });
+});
 </script>
 
 

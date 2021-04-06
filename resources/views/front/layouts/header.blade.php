@@ -1,4 +1,5 @@
 <header>
+
     <div class="site-mobile-menu">
         <div class="site-mobile-menu-header">
             <div class="site-mobile-menu-close mt-3">
@@ -8,35 +9,48 @@
         <div class="site-mobile-menu-body"></div>
     </div>
 
-    <header class="site-navbar" role="banner">
+    <smallnav class="navbar navbar-dark py-0 bg-dark navbar-expand-lg py-md-0 text-white">
+
+
+        <div class="navbar-collapse collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item py-0"><a href="#" class="nav-link">Home</a></li>
+                <li class="nav-item py-0"><a href="#" class="nav-link">{{ date('D, d-F-y H:i') }}
+                    </a></li>
+                <li class="nav-item py-0"><a href="#" class="nav-link">Link</a></li>
+                <li class="nav-item py-0"><a href="#" class="nav-link">More</a></li>
+                <li class="nav-item py-0"><a href="#" class="nav-link">Options</a></li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item py-0"><a href="#" class="nav-link">Login</a></li>
+            </ul>
+
+        </div>
+    </smallnav>
+
+
+    <navbar class="site-navbar" role="banner">
         <div class="container-fluid">
-
             <div class="row align-items-center">
-
-
                 <div class="col-4 site-logo">
                     <a href="{{ route('website') }}" class="text-black h2 mb-0">Mini Blog</a>
                 </div>
-
                 <div class="col-8 text-right">
                     <nav class="site-navigation" role="navigation">
                         <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
                             @foreach($categories as $category)
-                            <li><a href="{{ route('website.category', ['slug' => $category->slug]) }}">{{ ucfirst($category->name) }} </a></li>
+                            <li><a href="{{ route('website.category', ['slug' => $category->slug]) }}">{{ ucfirst($category->name) }}
+                                </a></li>
                             @endforeach
 
-                            <li class="d-none d-lg-inline-block"><a href="#" class="js-search-toggle"><span class="icon-search"></span></a></li>
-                            <div class="col-12 search-form-wrap js-search-form">
-                                <form method="get" action="{{ url('/') }}">
-                                    <input type="text" id="s" class="form-control" placeholder="Search..." name="">
-                                    <button class="search-btn" type="submit"><span class="icon-search"></span></button>
-                                </form>
-                            </div>
                         </ul>
                     </nav>
-                    <a href="#" class="site-menu-toggle js-menu-toggle text-black d-inline-block d-lg-none"><span class="icon-menu h3"></span></a>
+                    <a href="#" class="site-menu-toggle js-menu-toggle text-black d-inline-block d-lg-none"><span
+                            class="icon-menu h3"></span></a>
                 </div>
             </div>
-
         </div>
-    </header>
+    </navbar>
+</header>
