@@ -17,10 +17,18 @@
                 <li class="nav-item py-0"><a href="#" class="nav-link">Home</a></li>
                 <li class="nav-item py-0"><a href="#" class="nav-link">{{ date('D, d-F-y H:i') }}
                     </a></li>
-                <li class="nav-item py-0"><a href="#" class="nav-link">Link</a></li>
-                <li class="nav-item py-0"><a href="#" class="nav-link">More</a></li>
+
                 <li class="nav-item py-0"><a href="#" class="nav-link">Options</a></li>
+                <li>
+                    <select class="form-control select2" name="timezone" id="timezone">
+                        @foreach(timezone_identifiers_list() as $timezone)
+                        <option {{ old('timezone', 'Africa/Cairo') == $timezone ? 'selected' : '' }}>{{ $timezone }}
+                        </option>
+                        @endforeach
+                    </select>
+                </li>
             </ul>
+
         </div>
         <div class="dropdown">
             <ul class="navbar-nav">

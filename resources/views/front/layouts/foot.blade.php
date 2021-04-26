@@ -11,7 +11,7 @@
 <script src="{{ asset('front/js/aos.js') }}"></script>
 <script src="{{asset ('front/js/main.js') }}"></script>
 
-<!-- black navbar -->
+
 
 
 

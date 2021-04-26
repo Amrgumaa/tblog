@@ -22,3 +22,5 @@
 <link rel="stylesheet" href="{{ asset('admin/assets/plugins/fontawesome-free/css/all.min.css') }}">
 <!-- black navbar -->
 <link rel="stylesheet" href=" {{ asset('amr/navbar/navbar.css') }}">
+<!-- monment js cdn for time  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
