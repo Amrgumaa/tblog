@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/t', function () {
     return view('test.index');
 });
+Route::resource('/locationip', 'LocationipController');
+
 
 //Frontend Routes
 Route::get('/', 'FrontEndcontroller@home')->name('website');
